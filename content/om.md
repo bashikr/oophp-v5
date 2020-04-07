@@ -4,7 +4,7 @@ views:
         region: sidebar-right
         template: anax/v2/block/default
         data:
-            meta: 
+            meta:
                 type: single
                 route: block/om-kursrepo
 
@@ -12,17 +12,17 @@ views:
         region: sidebar-right
         template: anax/v2/block/default
         data:
-            meta: 
+            meta:
                 type: single
                 route: block/om-redovisa
 ---
-Om
+Om Kursen:
 =========================
 
-Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/om.md`.
 
-Skriv några kloka ord om kursen?
+[FIGURE src="image/code_design.png" caption="Design Masters" class="right w33"]
 
-Lägg till en fin och representativ bild för kursen, enligt ditt eget val.
+Kursen Objektorienterade webbteknologier, a.k.a. oophp, fokuserar på objektorienterade programmeringstekniker i programmeringsspråket PHP. Klassiska objektorienterade konstruktioner hanteras tillsammans med objektorienterad programmering i webbaserat ramverk tillsammans med databaser samt enhetstestning.
 
-[FIGURE src=image/car.png?w=740&filter=grayscale&f1=colorize,0,30,0,0 caption="En fin bil som demobild, lite oklart hur den är representativ, men ändå..."]
+I den här kursen kommer vi att tillämpa de förnämnda teknikerna på en PHP ramverk som kallas ANAX. Vi också kommer att lära oss pusha, clona, committa och tagga på GitHub.
+

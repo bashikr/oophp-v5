@@ -1,3 +1,5 @@
-#### Kurs och kursrepo
+#### Kursrepo
 
-Skriv något kort om kursen och länka till [kursens hemsida på dbwebb.se](XXX) och till [kursens kursrepo på GitHub](XXX).
+Läs mer om kursen via länken [OOPHP](https://github.com/bashikr/oophp-v5).
+
+Du också kan titta på [GitHub](https://github.com/bashikr/Design-v2).

@@ -1,3 +1,6 @@
-#### Footer col 1
+#### Contacts
 
-Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.
+Your opinion is important for us. Hence, we would
+happily hear from you on:
+
+bashikr@gmail.com
