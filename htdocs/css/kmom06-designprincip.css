@@ -5726,7 +5726,7 @@ hr::after {
   color: #fff;
   text-transform: uppercase;
   padding: 24px 30px;
-  font-size: 16px;
+  font-size: 14px;
   background-color: #626873;
   padding-bottom: 45px;
 }
@@ -6823,6 +6823,39 @@ figure.asciinema .asciicast {
 figure.codepen,
 figure.figure-codepen {
   width: 100%;
+}
+
+
+input[type="submit"]:hover {
+
+    font-size: 1em;
+    font-family: arial, sans-serif;
+    border: 1px solid rgb(219, 13, 209);
+    padding: 0 2em;
+    height: 46px;
+    text-decoration: none;
+    margin: 1em 0;
+    background-color: rgb(219, 13, 209);
+    font-weight: 900;
+
+}
+input[type="submit"] {
+
+    font-size: 1em;
+    font-family: arial, sans-serif;
+    border: 1px solid #efd343;
+    padding: 0 2em;
+    height: 46px;
+    text-decoration: none;
+    margin: 1em 0;
+    background-color: #efd343;
+    font-weight: 900;
+
+}
+
+input[type="text"], input[type="number"] {
+  width: 10em;
+  height: 46px;
 }
 /**
 * My own settings, not currently in their own module.
