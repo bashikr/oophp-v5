@@ -1,3 +1,5 @@
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/bashikr/oophp-v5/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+
 README about oophp-v5
 ==================
 
