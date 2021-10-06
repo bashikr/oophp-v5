@@ -13,7 +13,7 @@ return [
         // Change here to use your own templatefile as layout
         "template" => "anax/v2/layout/dbwebb_se",
         "data" => [
-            "baseTitle" => " | oophp",
+            "baseTitle" => " | OOPHP",
             "bodyClass" => null,
             "favicon" => "favicon.ico",
             "htmlClass" => null,

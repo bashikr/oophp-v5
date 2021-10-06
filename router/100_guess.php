@@ -7,14 +7,14 @@
 /**
  * Init the game redirect to play the game.
  */
-$app->router->get("guess/init", function () use ($app) {
+$app->router->get("games-view/guess/init", function () use ($app) {
     $_SESSION["res"] = null;
     // Init the game
     $game = new Bashar\Guess\Guess();
     $_SESSION["number"] = $game->number();
     $_SESSION["tries"] = $game->tries();
 
-    return $app->response->redirect("guess/play");
+    return $app->response->redirect("games-view/guess/play");
 });
 
 
@@ -22,10 +22,9 @@ $app->router->get("guess/init", function () use ($app) {
 /**
  * Play the game. show game status
  */
-$app->router->get("guess/play", function () use ($app) {
+$app->router->get("games-view/guess/play", function () use ($app) {
     $title = "Play the game";
 
-    
     $data = [
         "guess" => $_SESSION["guess"] ?? null,
         "tries" => $_SESSION["tries"] ?? null,
@@ -35,8 +34,8 @@ $app->router->get("guess/play", function () use ($app) {
 
     $_SESSION["res"] = null;
 
-    $app->page->add("guess/play", $data);
-    // $app->page->add("guess/debug");
+    $app->page->add("games-view/guess/play", $data);
+    // $app->page->add("games-view/guess/debug");
 
     return $app->page->render([
         "title" => $title,
@@ -47,7 +46,7 @@ $app->router->get("guess/play", function () use ($app) {
 /**
  * Play the game. Make a guess (POST method)
  */
-$app->router->post("guess/play", function () use ($app) {
+$app->router->post("games-view/guess/play", function () use ($app) {
 
     // Deal with incoming variables
     $guess = $_POST["guess"] ?? null;
@@ -60,16 +59,14 @@ $app->router->post("guess/play", function () use ($app) {
     $tries = $_SESSION["tries"] ?? null;
     $res = null;
 
-    if ($_POST["doInit"]) {
-        return $app->response->redirect("guess/init");
-    } elseif ($doGuess) {
+    if ($doGuess) {
         $_SESSION["guess"] = $guess;
-        return $app->response->redirect("guess/make-guess");
+        return $app->response->redirect("games-view/guess/make-guess");
     } elseif ($doCheat) {
         $_SESSION["res"] = "Cheated number is: " . $number;
-        return $app->response->redirect("guess/play");
+        return $app->response->redirect("games-view/guess/play");
     } else {
-        return $app->response->redirect("guess/init");
+        return $app->response->redirect("games-view/guess/init");
     }
 });
 
@@ -77,7 +74,7 @@ $app->router->post("guess/play", function () use ($app) {
 /**
  * Make a guess (make-guess)
  */
-$app->router->get("guess/make-guess", function () use ($app) {
+$app->router->get("games-view/guess/make-guess", function () use ($app) {
     $number = $_SESSION["number"] ?? null;
     $tries = $_SESSION["tries"] ?? null;
     $guess = $_SESSION["guess"] ?? null;
@@ -97,11 +94,11 @@ $app->router->get("guess/make-guess", function () use ($app) {
     $_SESSION["res"] = $res;
 
     if ($res == "CORRECT") {
-        return $app->response->redirect("guess/win");
+        return $app->response->redirect("games-view/guess/win");
     } elseif ($_SESSION["tries"] < 1) {
-        return $app->response->redirect("guess/fail");
+        return $app->response->redirect("games-view/guess/fail");
     } else {
-        return $app->response->redirect("guess/play");
+        return $app->response->redirect("games-view/guess/play");
     }
 });
 
@@ -110,7 +107,7 @@ $app->router->get("guess/make-guess", function () use ($app) {
 /**
  * Wining the game
  */
-$app->router->get("guess/win", function () use ($app) {
+$app->router->get("games-view/guess/win", function () use ($app) {
     $title =" You won the game!";
 
     $data = [
@@ -118,7 +115,7 @@ $app->router->get("guess/win", function () use ($app) {
     ];
     
 
-    $app->page->add("guess/win", $data);
+    $app->page->add("games-view/guess/win", $data);
 
     return $app->page->render([
         "title" => $title,
@@ -129,7 +126,7 @@ $app->router->get("guess/win", function () use ($app) {
 /**
  * In case of losing the game
  */
-$app->router->get("guess/fail", function () use ($app) {
+$app->router->get("games-view/guess/fail", function () use ($app) {
     $title =" You have lost the game!";
 
     $data = [
@@ -137,7 +134,7 @@ $app->router->get("guess/fail", function () use ($app) {
         "number" => $_SESSION["number"] ?? null
     ];
 
-    $app->page->add("guess/fail", $data);
+    $app->page->add("games-view/guess/fail", $data);
 
     return $app->page->render([
         "title" => $title,

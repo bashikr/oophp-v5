@@ -32,3 +32,10 @@ $di = null;
 foreach (glob(__DIR__ . "/Mock/*.php") as $file) {
     require $file;
 }
+
+/**
+ * Include others.
+ */
+foreach (glob(__DIR__ . "/Stub/*.php") as $file) {
+    require $file;
+}

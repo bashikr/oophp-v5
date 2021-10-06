@@ -84,5 +84,24 @@ return [
             "url" => "dev",
             "title" => "Anax development utilities",
         ],
+                [
+            "text" => "Games",
+            "url" => "games",
+            "title" => "Games",
+            "submenu" => [
+                "items" => [
+                    [
+                        "text" => "Guess game",
+                        "url" => "games/guess-game",
+                        "title" => "Play guess number game",
+                    ],
+                    [
+                        "text" => "Dice Roll",
+                        "url" => "games/dice-roll",
+                        "title" => "Play dice roll game",
+                    ],
+                ],
+            ],
+        ],
     ],
 ];
